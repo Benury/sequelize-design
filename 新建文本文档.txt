@@ -1,0 +1,360 @@
+39.108.179.65  
+
+代办事项：
+1. 下拉框这些需要能够入库；
+2. 做好校验；
+3. 重复判断；
+4. 审核页面；审核不通过，重新填写表单；
+审核失败可以重新发起审批
+
+审核；后面加操作栏：
+
+
+审核通过，审核驳回；
+
+状态： 未审核，审核通过，审核未通过
+
+
+使用 sequelize-cli 创建数据库和表，并插入默认数据了；； co模块
+https://segmentfault.com/a/1190000018114361?utm_source=tag-newest  ; 有效
+
+用户表User
+userid
+username
+password
+role
+
+权限表
+roleid
+role:权限编号
+roles : [区域]乡镇
+// 种子录入
+role 为0 表示管理员权限
+其他的通过roles确定能查看哪些区域的数据
+
+
+登记信息
+Info
+id
+xingming
+cun
+zu
+name
+sfzh
+phone
+edate
+back_address
+back_type
+helthy
+mname
+mjob
+mphone
+desc
+status
+
+
+
+ sequelize db:migrate                        Run pending migrations
+  sequelize db:migrate:schema:timestamps:add  Update migration table to have timestamps
+  sequelize db:migrate:status                 List the status of all migrations
+  sequelize db:migrate:undo                   Reverts a migration
+  sequelize db:migrate:undo:all               Revert all migrations ran
+  sequelize db:seed                           Run specified seeder
+  sequelize db:seed:undo                      Deletes data from the database
+  sequelize db:seed:all                       Run every seeder
+  sequelize db:seed:undo:all                  Deletes data from the database
+  sequelize db:create                         Create database specified by configuration
+  sequelize db:drop                           Drop database specified by configuration
+  sequelize init                              Initializes project
+  sequelize init:config                       Initializes configuration
+  sequelize init:migrations                   Initializes migrations
+  sequelize init:models                       Initializes models
+  sequelize init:seeders                      Initializes seeders
+  sequelize migration:generate                Generates a new migration file       [aliases: migration:create]
+  sequelize model:generate                    Generates a model and its migration  [aliases: model:create]
+  sequelize seed:generate                     Generates a new seed file            [aliases: seed:create]
+
+
+更新表结构 --force重新生成 model
+
+
+{
+  "development": {
+    "username": "root",
+    "password": "Zou285733@",
+    "database": "yudo",
+    "host": "39.108.179.65",
+    "dialect": "mysql",
+    "dialectOptions": {
+      "charset": "utf8mb4",
+      "collate": "utf8mb4_unicode_ci",
+      "supportBigNumbers": true,
+      "bigNumberStrings": true
+    },
+    "define":{
+      "underscored": true,
+      "charset":"utf8mb4"
+    }
+  },
+  "test": {
+    "username": "root",
+    "password": "123456",
+    "database": "database_test",
+    "host": "127.0.0.1",
+    "dialect": "mysql",
+    "dialectOptions": {
+      "freezeTableName": true,
+      "paranoid": true,
+      "syncOnAssociation": true,
+      "charset": "utf8",
+      "collate": "utf8_general_ci",
+      "timestamps": true
+    },
+    "define":{
+      "underscored": true,
+      "charset":"utf8mb4"
+    }
+  },
+  "production": {
+    "username": "root",
+    "password": "123456",
+    "database": "database_production",
+    "host": "127.0.0.1",
+    "dialect": "mysql",
+    "dialectOptions": {
+      "freezeTableName": true,
+      "paranoid": true,
+      "syncOnAssociation": true,
+      "charset": "utf8",
+      "collate": "utf8_general_ci",
+      "timestamps": true
+    },
+    "define":{
+      "underscored": true,
+      "charset":"utf8mb4"
+    }
+  }
+}
+
+
+{
+  "development": {
+    "username": "root",
+    "password": "Zou285733@",
+    "database": "yudo",
+    "host": "39.108.179.65",
+    "dialect": "mysql",
+    "pool":{
+        "max": 5,
+        "min": 0,
+        "idle": 10000
+    },
+    "timezone": "+08:00",
+    "define":{
+      "charset": "utf8",
+      "dialectOptions":{
+          "collate": "utf8_general_ci"
+      }
+    }
+  },
+  "test": {
+    "username": "root",
+    "password": "root",
+    "database": "database_test",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "root",
+    "password": "root",
+    "database": "database_test",
+    "host": "127.0.0.1",
+    "dialect": "mysql",
+    "pool":{
+        "max": 5,
+        "min": 0,
+        "idle": 10000
+    },
+    "timezone": "+08:00",
+    "define":{
+      "charset": "utf8",
+      "dialectOptions":{
+          "collate": "utf8_general_ci"
+      }
+    }
+  }
+}
+
+{
+  "development": {
+    "username": "root",
+    "password": "Zou285733@",
+    "database": "yudo",
+    "host": "39.108.179.65",
+    "dialect": "mysql",
+    "pool":{
+        "max": 5,
+        "min": 0,
+        "idle": 10000
+    },
+    "timezone": "+08:00",
+    "define":{
+      "charset": "utf8",
+      "dialectOptions":{
+          "collate": "utf8_general_ci"
+      }
+    }
+  },
+  "test": {
+    "username": "root",
+    "password": "Zou285733@",
+    "database": "yudo",
+    "host": "39.108.179.65",
+    "dialect": "mysql",
+    "pool":{
+        "max": 5,
+        "min": 0,
+        "idle": 10000
+    },
+    "timezone": "+08:00",
+    "define":{
+      "charset": "utf8",
+      "dialectOptions":{
+          "collate": "utf8_general_ci"
+      }
+    }
+  },
+  "production": {
+    "username": "root",
+    "password": "Zou285733@",
+    "database": "yudo",
+    "host": "39.108.179.65",
+    "dialect": "mysql",
+    "pool":{
+        "max": 5,
+        "min": 0,
+        "idle": 10000
+    },
+    "timezone": "+08:00",
+    "define":{
+      "charset": "utf8",
+      "dialectOptions":{
+          "collate": "utf8_general_ci"
+      }
+    }
+  }
+}
+
+down: (queryInterface, Sequelize) => {
+        return queryInterface.sequelize.transaction((t) => {
+            return Promise.all([
+                queryInterface.removeColumn('Person', 'petName', { transaction: t }),
+                queryInterface.removeColumn('Person', 'favoriteColor', { transaction: t })
+            ])
+        })
+    }
+
+
+sequelize API 比较全
+https://sequelize.org/master/class/lib/query-interface.js~QueryInterface.html
+https://sequelize.org/master/class/lib/query-interface.js~QueryInterface.html
+
+
+
+总结文档
+
+创建express 项目
+npm install --save sequelize-cli sequelize mysql2 co
+
+1. node_modules/.bin/sequelize init
+2. 配置连接数据库的信息
+{
+  "development": {
+    "username": "root",
+    "password": "Zou285733@",
+    "database": "yudo",
+    "host": "39.108.179.65",
+    "dialect": "mysql",
+    "pool":{
+        "max": 5,
+        "min": 0,
+        "idle": 10000
+    },
+    "timezone": "+08:00",
+    "define":{
+      "charset": "utf8",
+      "dialectOptions":{
+          "collate": "utf8_general_ci"
+      }
+    }
+  },
+  "test": {
+    "username": "root",
+    "password": "Zou285733@",
+    "database": "yudo",
+    "host": "39.108.179.65",
+    "dialect": "mysql",
+    "pool":{
+        "max": 5,
+        "min": 0,
+        "idle": 10000
+    },
+    "timezone": "+08:00",
+    "define":{
+      "charset": "utf8",
+      "dialectOptions":{
+          "collate": "utf8_general_ci"
+      }
+    }
+  },
+  "production": {
+    "username": "root",
+    "password": "Zou285733@",
+    "database": "yudo",
+    "host": "39.108.179.65",
+    "dialect": "mysql",
+    "pool":{
+        "max": 5,
+        "min": 0,
+        "idle": 10000
+    },
+    "timezone": "+08:00",
+    "define":{
+      "charset": "utf8",
+      "dialectOptions":{
+          "collate": "utf8_general_ci"
+      }
+    }
+  }
+}
+
+
+ 4. node_modules/.bin/sequelize db:create
+5 node_modules/.bin/sequelize model:generate --name User --attributes firstName:string,lastName:string,email:string
+
+6. node_modules/.bin/sequelize db:migrate
+
+7. 种子
+node_modules/.bin/sequelize seed:generate --name demo-user
+node_modules/.bin/sequelize db:seed:all
+
+cli基本使用https://segmentfault.com/a/1190000018114361?utm_source=tag-newest
+
+api 文档 https://sequelize.org/master/class/lib/sequelize.js~Sequelize.html
+
+nginx 配置方法
+
+密码要使用md5加密
+
+location / {
+            root   F:/work/yudo/client/form/;
+            index  index.html index.htm;
+        }
+        location ^~ /api/ {
+            proxy_pass http://localhost:3000/;
+            proxy_set_header Host      $host;
+            proxy_set_header X-Real-IP $remote_addr;
+        }
+start nginx
+nginx.exe -s stop
+nginx.exe -s reload
